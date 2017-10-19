@@ -195,7 +195,8 @@ module.exports = function(config) {
 {
   "tslint.configFile": ".config/tslint.json",
   "tslint.autoFixOnSave": true,
-  "tslint.enable": true
+  "tslint.enable": true,
+  "editor.tabSize": 2
 }
 ```
 
