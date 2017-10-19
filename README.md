@@ -10,6 +10,7 @@ git init
 
 ```bash
 node_modules/
+coverage/
 src/*.js
 test/*.js
 test/report.html
@@ -74,8 +75,8 @@ Important!
 mocha
 no Require.js
 ChromeHeadless
-src/**/*.js
-test/**/*.js
+src/**/*.ts
+test/**/*.ts
 watch, not single run
 ```
 
@@ -162,25 +163,29 @@ module.exports = function(config) {
 
 ```js
 {
-  "defaultSeverity": "error",
-  "extends": [
-    "tslint:recommended"
-  ],
-  "jsRules": {},
-  "rules": {
-    "member-access": [true, "no-public"],
-    "quotemark": [true, "single"]
-  },
-  "rulesDirectory": []
-}
+    "defaultSeverity": "error",
+    "extends": [
+      "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+      "arrow-parens": [true, "ban-single-arg-parens"],
+      "member-access": [true, "no-public"],
+      "quotemark": [true, "single"],
+      "array-type": [true, "array"],
+      "curly": [true, "ignore-same-line"],
+      "object-literal-sort-keys": [false]
+    },
+    "rulesDirectory": []
+  }
 ```
 
 ## Custom scripts in `package.json`
 
 ```js
-"test": "karma start"
-"test:single-run": "karma start --single-run"
-"tslint": "tslint -c ./.config/tslint.json 'src/**/*.ts' -t stylish"
+"test": "karma start",
+"test:single-run": "karma start --single-run",
+"tslint": "tslint -c ./.config/tslint.json 'src/**/*.ts' -t stylish",
 "double-check": "npm run test:single-run && npm run tslint"
 ```
 
