@@ -52,6 +52,7 @@ Override the following values:
 ```js
 "target": "es2015",    /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
 "module": "commonjs",  /* Specify module code generation: 'none', commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+"lib": ["es2015"],
 "declaration": true,   /* Generates corresponding '.d.ts' file. */
 "sourceMap": true,     /* Generates corresponding '.map' file. */
 "outDir": "./dist",    /* Redirect output structure to the directory. */
@@ -123,6 +124,10 @@ module.exports = function(config) {
       ],
     },
 
+    karmaTypescriptConfig: {
+      tsconfig: "./tsconfig.json",
+    },
+
     // test results reporter to use. possible values: 'dots', 'progress'. available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: [
       'progress',
@@ -163,21 +168,23 @@ module.exports = function(config) {
 
 ```js
 {
-    "defaultSeverity": "error",
-    "extends": [
-      "tslint:recommended"
-    ],
-    "jsRules": {},
-    "rules": {
-      "arrow-parens": [true, "ban-single-arg-parens"],
-      "member-access": [true, "no-public"],
-      "quotemark": [true, "single"],
-      "array-type": [true, "array"],
-      "curly": [true, "ignore-same-line"],
-      "object-literal-sort-keys": [false]
-    },
-    "rulesDirectory": []
-  }
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {},
+  "rules": {
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "member-access": [true, "no-public"],
+    "quotemark": [true, "single"],
+    "array-type": [true, "array"],
+    "curly": [true, "ignore-same-line"],
+    "object-literal-sort-keys": [false],
+    "interface-name": [true, "never-prefix"],
+    "no-empty-interface": [false]
+  },
+  "rulesDirectory": []
+}
 ```
 
 ## Custom scripts in `package.json`
