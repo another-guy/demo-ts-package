@@ -52,7 +52,7 @@ Override the following values:
 ```js
 "target": "es2015",    /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
 "module": "commonjs",  /* Specify module code generation: 'none', commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
-"lib": ["es2015"],
+"lib": ["dom", "es2015"],
 "declaration": true,   /* Generates corresponding '.d.ts' file. */
 "sourceMap": true,     /* Generates corresponding '.map' file. */
 "outDir": "./dist",    /* Redirect output structure to the directory. */
