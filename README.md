@@ -11,6 +11,8 @@ git init
 ```bash
 node_modules/
 coverage/
+bin/
+dist/
 src/*.js
 test/*.js
 test/report.html
